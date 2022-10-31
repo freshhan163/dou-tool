@@ -1,0 +1,12 @@
+{
+  "name": "dou-tool",
+  "version": "1.0.0",
+  "description": "爬取实时数据",
+  "scripts": {
+    "start": "node src/master.js"
+  },
+  "author": "hanxiaofang",
+  "dependencies": {
+    "superagent": "^8.0.3"
+  }
+}
