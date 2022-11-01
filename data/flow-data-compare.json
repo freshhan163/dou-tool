@@ -1,0 +1,40 @@
+{
+  "data": {
+    "begin_date": 0,
+    "data_result": {
+      "display": { "today": "今日", "yesterday": "昨日" },
+      "unit": { "today": "number", "yesterday": "number" },
+      "value": [
+        { "x": "00:00", "y": { "today": 0, "yesterday": 0 } },
+        { "x": "01:00", "y": { "today": 3453, "yesterday": 172 } },
+        { "x": "02:00", "y": { "today": 4819, "yesterday": 246 } },
+        { "x": "03:00", "y": { "today": 5565, "yesterday": 586 } },
+        { "x": "04:00", "y": { "today": 6026, "yesterday": 1131 } },
+        { "x": "05:00", "y": { "today": 6363, "yesterday": 1488 } },
+        { "x": "06:00", "y": { "today": 6780, "yesterday": 1837 } },
+        { "x": "07:00", "y": { "today": 8119, "yesterday": 2428 } },
+        { "x": "08:00", "y": { "today": 10566, "yesterday": 3864 } },
+        { "x": "09:00", "y": { "today": 14452, "yesterday": 6173 } },
+        { "x": "10:00", "y": { "today": 18659, "yesterday": 9763 } },
+        { "x": "11:00", "y": { "today": 24330, "yesterday": 14251 } },
+        { "x": "12:00", "y": { "today": 30864, "yesterday": 19523 } },
+        { "x": "13:00", "y": { "today": 35977, "yesterday": 23361 } },
+        { "x": "14:00", "y": { "today": 40570, "yesterday": 29415 } },
+        { "x": "15:00", "y": { "today": 43963, "yesterday": 34663 } },
+        { "x": "16:00", "y": { "today": 47337, "yesterday": 41404 } },
+        { "x": "17:00", "y": { "today": 49848, "yesterday": 48756 } },
+        { "x": "18:00", "y": { "today": 52414, "yesterday": 55729 } },
+        { "x": "19:00", "y": { "today": 54993, "yesterday": 61094 } },
+        { "x": "20:00", "y": { "yesterday": 67900 } },
+        { "x": "21:00", "y": { "yesterday": 73816 } },
+        { "x": "22:00", "y": { "yesterday": 81892 } },
+        { "x": "23:00", "y": { "yesterday": 89906 } }
+      ]
+    },
+    "end_date": 23,
+    "focused_begin_date": 0,
+    "focused_end_date": 23
+  },
+  "msg": "",
+  "st": 0
+}

@@ -1,0 +1,1333 @@
+{
+    "data": {
+        "data_result": [
+            {
+                "data": {
+                    "click_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.9251559251559252
+                        }
+                    },
+                    "pay_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 113
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 72
+                        }
+                    },
+                    "product_add_to_cart_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 183
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 134
+                        }
+                    },
+                    "product_click_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 1568
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 890
+                        }
+                    },
+                    "product_detail_no_act_leave_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 227
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 139
+                        }
+                    },
+                    "product_show_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 95352
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 56416
+                        }
+                    },
+                    "product_wish_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 17
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 12
+                        }
+                    },
+                    "show_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.9916855631141346
+                        }
+                    }
+                },
+                "info": {
+                    "source_info": {
+                        "flow_source": "recommend",
+                        "flow_source_display": "商城推荐"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "click_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.038461538461538464
+                        }
+                    },
+                    "pay_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 8
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 6
+                        }
+                    },
+                    "product_add_to_cart_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 5
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 5
+                        }
+                    },
+                    "product_click_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 55
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 37
+                        }
+                    },
+                    "product_detail_no_act_leave_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 12
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 7
+                        }
+                    },
+                    "product_show_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 202
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 151
+                        }
+                    },
+                    "product_wish_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "show_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.002654291690836541
+                        }
+                    }
+                },
+                "info": {
+                    "source_info": {
+                        "flow_source": "aftersale",
+                        "flow_source_display": "购后页面"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "click_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.02390852390852391
+                        }
+                    },
+                    "pay_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 14
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 14
+                        }
+                    },
+                    "product_add_to_cart_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 4
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 9
+                        }
+                    },
+                    "product_click_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 8
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 23
+                        }
+                    },
+                    "product_detail_no_act_leave_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 23
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 12
+                        }
+                    },
+                    "product_show_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 136
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 122
+                        }
+                    },
+                    "product_wish_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "show_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.002144527061470583
+                        }
+                    }
+                },
+                "info": {
+                    "source_info": {
+                        "flow_source": "other",
+                        "flow_source_display": "其他"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "click_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.008316008316008316
+                        }
+                    },
+                    "pay_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_add_to_cart_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 3
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 2
+                        }
+                    },
+                    "product_click_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 16
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 8
+                        }
+                    },
+                    "product_detail_no_act_leave_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 6
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 1
+                        }
+                    },
+                    "product_show_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 280
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 97
+                        }
+                    },
+                    "product_wish_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 1
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "show_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.0017050747947757914
+                        }
+                    }
+                },
+                "info": {
+                    "source_info": {
+                        "flow_source": "store",
+                        "flow_source_display": "店铺页面"
+                    }
+                }
+            },
+            {
+                "children": [
+                    {
+                        "data": {
+                            "click_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0
+                                }
+                            },
+                            "pay_ucnt": {
+                                "change_value": {
+                                    "unit": "number",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_add_to_cart_ucnt": {
+                                "change_value": {
+                                    "unit": "number",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_click_ucnt": {
+                                "change_value": {
+                                    "unit": "number",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_detail_no_act_leave_ucnt": {
+                                "change_value": {
+                                    "unit": "number",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_show_ucnt": {
+                                "change_value": {
+                                    "unit": "number",
+                                    "value": 12
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 24
+                                }
+                            },
+                            "product_wish_ucnt": {
+                                "change_value": {
+                                    "unit": "number",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "show_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0.27906976744186046
+                                }
+                            }
+                        },
+                        "info": {
+                            "author_info": {
+                                "author_icon": "https://p11.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_91297d9c092953737e0c08e4cb32893b.jpeg?from=4010531038",
+                                "author_id": 58744272013,
+                                "author_name": "琦儿Leo⭐️今晚6点超级宠粉日开播！",
+                                "author_qr_code": "",
+                                "aweme_id": "sq19940808",
+                                "fans_num": 3966980,
+                                "is_self": false
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "click_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0
+                                }
+                            },
+                            "pay_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_add_to_cart_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_click_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_detail_no_act_leave_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_show_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 3
+                                }
+                            },
+                            "product_wish_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "show_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0.03488372093023256
+                                }
+                            }
+                        },
+                        "info": {
+                            "author_info": {
+                                "author_icon": "https://p3.douyinpic.com/aweme/100x100/aweme-avatar/mosaic-legacy_311f40004086e8b3d541d.jpeg?from=4010531038",
+                                "author_id": 58544496104,
+                                "author_name": "疯狂小杨哥",
+                                "author_qr_code": "",
+                                "aweme_id": "6182390",
+                                "fans_num": 99806833,
+                                "is_self": false
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "click_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0
+                                }
+                            },
+                            "pay_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_add_to_cart_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_click_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_detail_no_act_leave_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_show_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 2
+                                }
+                            },
+                            "product_wish_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "show_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0.023255813953488372
+                                }
+                            }
+                        },
+                        "info": {
+                            "author_info": {
+                                "author_icon": "https://p3.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_fce2d76a93d84a6098de6019cdd84899.jpeg?from=4010531038",
+                                "author_id": 3650827712215112,
+                                "author_name": "阿洋盲拆百货",
+                                "author_qr_code": "",
+                                "aweme_id": "23559971417",
+                                "fans_num": 491025,
+                                "is_self": false
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "click_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0
+                                }
+                            },
+                            "pay_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_add_to_cart_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_click_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_detail_no_act_leave_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_show_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 2
+                                }
+                            },
+                            "product_wish_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "show_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0.023255813953488372
+                                }
+                            }
+                        },
+                        "info": {
+                            "author_info": {
+                                "author_icon": "https://p3.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_1ef6178fb43bf6573949e0fea111f86f.jpeg?from=4010531038",
+                                "author_id": 2150298885563934,
+                                "author_name": "骆王宇（11月2日晚6点双十一直播）",
+                                "author_qr_code": "",
+                                "aweme_id": "luowangyu123",
+                                "fans_num": 20449683,
+                                "is_self": false
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "click_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 1
+                                }
+                            },
+                            "pay_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_add_to_cart_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_click_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 1
+                                }
+                            },
+                            "product_detail_no_act_leave_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "product_show_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 1
+                                }
+                            },
+                            "product_wish_ucnt": {
+                                "change_value": {
+                                    "unit": "nan",
+                                    "value": 0
+                                },
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "number",
+                                    "value": 0
+                                }
+                            },
+                            "show_ucnt_rate": {
+                                "change_value": {},
+                                "index_display": "",
+                                "index_name": "",
+                                "index_tip": "",
+                                "value": {
+                                    "unit": "ratio",
+                                    "value": 0.011627906976744186
+                                }
+                            }
+                        },
+                        "info": {
+                            "author_info": {
+                                "author_icon": "https://p11.douyinpic.com/aweme/100x100/aweme-avatar/mosaic-legacy_171880004d505ab1510f2.jpeg?from=4010531038",
+                                "author_id": 57146617774,
+                                "author_name": "呗呗兔_31号晚上7点直播",
+                                "author_qr_code": "",
+                                "aweme_id": "3897894",
+                                "fans_num": 9649643,
+                                "is_self": false
+                            }
+                        }
+                    }
+                ],
+                "data": {
+                    "click_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.0010395010395010396
+                        }
+                    },
+                    "pay_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_add_to_cart_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_click_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 2
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 1
+                        }
+                    },
+                    "product_detail_no_act_leave_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_show_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 298
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 86
+                        }
+                    },
+                    "product_wish_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "show_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.0015117157974300832
+                        }
+                    }
+                },
+                "info": {
+                    "source_info": {
+                        "flow_source": "window",
+                        "flow_source_display": "橱窗"
+                    }
+                }
+            },
+            {
+                "children": [],
+                "data": {
+                    "click_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.0031185031185031187
+                        }
+                    },
+                    "pay_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_add_to_cart_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_click_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 1
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 3
+                        }
+                    },
+                    "product_detail_no_act_leave_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 1
+                        }
+                    },
+                    "product_show_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 44
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 16
+                        }
+                    },
+                    "product_wish_ucnt": {
+                        "change_value": {
+                            "unit": "number",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "show_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.00028124945068466663
+                        }
+                    }
+                },
+                "info": {
+                    "source_info": {
+                        "flow_source": "search",
+                        "flow_source_display": "搜索"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "click_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0
+                        }
+                    },
+                    "pay_ucnt": {
+                        "change_value": {
+                            "unit": "nan",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_add_to_cart_ucnt": {
+                        "change_value": {
+                            "unit": "nan",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_click_ucnt": {
+                        "change_value": {
+                            "unit": "nan",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_detail_no_act_leave_ucnt": {
+                        "change_value": {
+                            "unit": "nan",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "product_show_ucnt": {
+                        "change_value": {
+                            "unit": "nan",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 1
+                        }
+                    },
+                    "product_wish_ucnt": {
+                        "change_value": {
+                            "unit": "nan",
+                            "value": 0
+                        },
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "number",
+                            "value": 0
+                        }
+                    },
+                    "show_ucnt_rate": {
+                        "change_value": {},
+                        "index_display": "",
+                        "index_name": "",
+                        "index_tip": "",
+                        "value": {
+                            "unit": "ratio",
+                            "value": 0.000017578090667791665
+                        }
+                    }
+                },
+                "info": {
+                    "source_info": {
+                        "flow_source": "channel_activity",
+                        "flow_source_display": "频道及活动页面"
+                    }
+                }
+            }
+        ],
+        "page_result": {}
+    },
+    "msg": "",
+    "st": 0
+}

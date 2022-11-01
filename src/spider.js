@@ -17,32 +17,46 @@ function writeToJsonFile(name, data) {
     });
 }
 
-module.exports = function (start) {
+function spiderDouApi() {
     return new Promise((resolve, reject) => {
         spider
-        .get(api)
+        .get('https://compass.jinritemai.com/compass_api/shop/product/product_detail/flow_source')
         .query({
-            sort: 'U',
-            tags: '',
-            start: start,
-            range: '0,10',
-            genres: '动画',
-            countries: '日本'
+            date_type: 1,
+            begin_date: '2022/10/31 00:00:00',
+            end_date: '2022/10/31 00:00:00',
+            is_activity: false,
+            activity_id: '',
+            product_id: 3568103047295009149,
+            index_name: 'product_show_ucnt,product_click_ucnt,pay_ucnt,product_add_to_cart_ucnt,product_wish_ucnt,product_detail_no_act_leave_ucnt',
+            sort_field: 'product_show_ucnt',
+            is_asc: false,
+            _lid: 148999423745,
+            msToken: '6TkyxiGN5_z8Qe3aaitBq5y7-G3qe5fREkt8pPyAhxpIiFriRoOdoNDi2k3clE4J8hkYxeqdwPGEanyHW1Bpu2wcyWkDLpNCy35OC1D3Att_wVwH8YD6_JLubKWJfg0=',
+            'X-Bogus': 'DFSzsdVOyUhANrwwS/zO1QKMtakz'
         })
-        .type('form')
         .accept('application/json')
+        .set('Cookie', 'msToken=6hijmTqCkBVaeUeFob1eK6erJgf4MtlTdVwl5cmj3hDNDZdam-d7gjgPHb6BtjRC2STIn_U81lFSOcDz58rzlqNqNSgeNQjZXK2i5RtjgY7-2vGrTw20Gw==')
+        .set('sec-ch-ua', '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"')
+        .set('user-agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36')
+        .set('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36')
+        .set('sec-ch-ua-platform', '"macOS"')
+        .set('sec-ch-ua', '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"')
+        .set('referer', 'https://compass.jinritemai.com/shop/merchandise-traffic-analysis?product_id=3568103047295009149&tab_type=1&begin_date=1667059200&prepages%5B0%5D=%2Fshop%2Ftraffic-analysis-product')
+        .set({
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+            'authority': 'compass.jinritemai.com'
+        })
         .end((err, res) => {
             if (err) {
                 reject(err);
             }
-
-            // 加唯一id，保证多线程爬取数据的先后顺序可以确定
-            let resObj = JSON.parse(res.text);
-            writeToJsonFile(`${start}.json`, res.text);
-            if (resObj.data) {
-                console.log(resObj.data.length);
-            }
-            resolve();
+            console.log('res.text =', res.text);
+            resolve(res.text);
         });
     });
+}
+
+module.exports = {
+    spiderDouApi,
 };
