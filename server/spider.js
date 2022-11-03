@@ -32,8 +32,8 @@ function spiderDouApi() {
             sort_field: 'product_show_ucnt',
             is_asc: false,
             _lid: 148999423745,
-            msToken: '6TkyxiGN5_z8Qe3aaitBq5y7-G3qe5fREkt8pPyAhxpIiFriRoOdoNDi2k3clE4J8hkYxeqdwPGEanyHW1Bpu2wcyWkDLpNCy35OC1D3Att_wVwH8YD6_JLubKWJfg0=',
-            'X-Bogus': 'DFSzsdVOyUhANrwwS/zO1QKMtakz'
+            msToken: '5p1aNaUVBq7_EvC_j9VaCR2ow9vzNWrTpTWpQ-33_4--yMf93WwFU3HVA48gx_lW_qTSChexnBEZcI1GAmxzoglyy_OCXmmbzh5PdVctGZClsqB3AhjyUw==',
+            'X-Bogus': 'DFSzsdVOBKiANrwwS0fxncKMtaDC'
         })
         .accept('application/json')
         .set('Cookie', 'msToken=6hijmTqCkBVaeUeFob1eK6erJgf4MtlTdVwl5cmj3hDNDZdam-d7gjgPHb6BtjRC2STIn_U81lFSOcDz58rzlqNqNSgeNQjZXK2i5RtjgY7-2vGrTw20Gw==')

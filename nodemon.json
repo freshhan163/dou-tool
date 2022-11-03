@@ -1,0 +1,12 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        "tool-vue",
+        "node_modules",
+        "dist/*"
+    ],
+    "watch": ["server/**/*"],
+    "verbose": true,
+    "exec": "ts-node --project server/tsconfig.json --files server/app.ts",
+    "ext": "ts,js"
+}

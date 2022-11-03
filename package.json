@@ -3,10 +3,29 @@
   "version": "1.0.0",
   "description": "爬取实时数据",
   "scripts": {
-    "start": "node src/master.js"
+    "server:local": "NODE_ENV=development NODE_BUILD=staging nodemon --config nodemon.json",
+    "server": "NODE_ENV=production nodemon --config nodemon.json"
   },
   "author": "hanxiaofang",
   "dependencies": {
-    "superagent": "^8.0.3"
+    "@koa/cors": "^4.0.0",
+    "@koa/router": "^12.0.0",
+    "axios": "^1.1.3",
+    "koa": "^2.13.4",
+    "koa-body": "^6.0.1",
+    "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "koa2-connect-history-api-fallback": "^0.1.3",
+    "loadash": "^1.0.0",
+    "nodemon": "^2.0.20",
+    "reflect-metadata": "^0.1.13",
+    "superagent": "^8.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/koa-static": "^4.0.2",
+    "@types/koa__cors": "^3.3.0",
+    "@types/koa__router": "^12.0.0"
   }
 }
