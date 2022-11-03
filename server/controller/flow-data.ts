@@ -1,3 +1,7 @@
+/**
+ * @file flow-data.ts
+ * @desc 实时数据（精确到s）
+ */
 import { Context } from 'koa';
 import { SUCCESS_CODE, ERROR_RES_CODE } from '../config/errorCode';
 import { getErrorInfo } from '../lib/util';
@@ -5,13 +9,13 @@ import { controllerDecorator, requestDecorator } from '../decorators/ControlDeco
 import { get, post } from '../lib/axios';
 
 @controllerDecorator({
-    prefix: '/api/chart'
+    prefix: '/api/dou/flow'
 })
 export default class ActivityProcessController {
     constructor() {}
 
     @requestDecorator({
-        path: '/dou/chart',
+        path: '/data',
         type: 'get'
     })
     async getInfo(args: any, ctx: Context): Promise<void> {
