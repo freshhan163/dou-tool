@@ -19,7 +19,6 @@ export default class FlowSourceController {
         type: 'get'
     })
     async getInfo(args: any, ctx: Context): Promise<void> {
-        console.log('111111');
         // product_id
         // begin_date： 2022/10/27 00:00:00  | end_date | index_name | sort_field | is_asc
         // msToken | X-Bogus，是否需要定期更新？
@@ -67,7 +66,9 @@ export default class FlowSourceController {
                     }
                 }
             );
-            console.log('res = ', res.data);
+            console.log('res = ', res.data.data.data_result.value);
+            const list = res.data?.data?.data_result?.value ?? [];
+            
 
             ctx.body = {
                 result: SUCCESS_CODE,

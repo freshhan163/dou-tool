@@ -1,4 +1,5 @@
 import { Context } from 'koa';
+import { format } from 'date-fns';
 
 export function getErrorInfo(e: any, resultCode: number, context: Context) {
     console.log(`接口${context.url}报错 e = `, e);
@@ -33,3 +34,23 @@ export function setCookie(context: Context, key: string, value: string, attribut
         ...attributes
     }));
 }
+
+// 参数编码，针对时间进行特殊处理
+export function encodeParams(params: any) {
+    let str = '?';
+    for (const key in params) {
+        let val = params[`${key}`];
+        // 获取今日的时间
+        if (key === 'begin_date' || key === 'end_date') {
+            const currentDate = format(new Date(), 'yyyy/MM/dd');
+            val = `${encodeURIComponent(currentDate)}+00:00:00`;
+        }
+        str += `${key}=${val}&`;
+    }
+    return str.slice(0, -1);
+}
+
+// API域名
+export const PrefixHost = 'compass.jinritemai.com';
+// API网址
+export const PrefixUrl = `https://${PrefixHost}`;

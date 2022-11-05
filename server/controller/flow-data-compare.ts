@@ -6,7 +6,9 @@ import { Context } from 'koa';
 import { SUCCESS_CODE, ERROR_RES_CODE } from '../config/errorCode';
 import { getErrorInfo } from '../lib/util';
 import { controllerDecorator, requestDecorator } from '../decorators/ControlDecorator';
-import { get, post } from '../lib/axios';
+import { get } from '../lib/axios';
+import { DataCompareParams, DataCompareRes, NewListItem } from '../types/data-compare';
+import { encodeParams, PrefixUrl, PrefixHost } from '../lib/util';
 
 @controllerDecorator({
     prefix: '/api/dou/flow'
@@ -15,23 +17,43 @@ export default class ActivityProcessController {
     constructor() {}
 
     @requestDecorator({
-        path: '/data/compare',
+        path: '/compare',
         type: 'get'
     })
-    async getInfo(args: any, ctx: Context): Promise<void> {
+    async getInfo(args: DataCompareParams, ctx: Context): Promise<void> {
         try {
-            const res: any = await get(
-                'https://compass.jinritemai.com/compass_api/shop/product/product_detail/flow_source?date_type=21&begin_date=2022%2F10%2F27+00:00:00&end_date=2022%2F11%2F02+00:00:00&is_activity=false&activity_id=&product_id=3568103047295009149&index_name=product_show_ucnt,product_click_ucnt,pay_ucnt,product_add_to_cart_ucnt,product_wish_ucnt,product_detail_no_act_leave_ucnt&sort_field=product_show_ucnt&is_asc=false&_lid=826228714647&msToken=VsCBm_k9EaTGUlAlacmab7QTpf2TolWCy7kZq-eKhpj6mPBqDuKuQrKcAEtUZ1GAVCgBSpS_8cGGC_SZoR7B_d_euFESSnBMGrGLZHZFE72c3QI6js__FdqPImr_HV4=&X-Bogus=DFSzsdVOjrUANaPqS0WZL5KMtapC',
+            if (!args.index_selected) {
+                throw new Error('缺少参数index_selected');
+            }
+            if (!args.product_id) {
+                throw new Error('缺少参数product_id');
+            }
+            const params = Object.assign({}, {
+                date_type: 1,
+                begin_date: '',
+                end_date: '',
+                is_activity: false,
+                activity_id: '',
+                product_id: '3568103047295009149',
+                index_selected: 'product_click_ucnt',
+                _lid: 614025885630,
+                msToken: '2pc2--BJBCvxMpoAS6S8ei-Q6-pcut2XGWBX6K8jkDjEQL093kgv2KpzvErUZwz6OG4Lhfi7KpXc3mpa7eU_vE-ranO3e8E8jE-jBVQhCxOg3He2VODvTG5KSg5-Ft8=',
+                'X-Bogus': 'DFSzsdVLfiUANjwQS0Qc037TlqeL',
+            });
+            const encodeStr = encodeParams(params);
+            console.log('encodeStr =', encodeStr);
+            const res = await get<DataCompareRes>(
+                `${PrefixUrl}/compass_api/shop/product/product_detail/flow_data_compare${encodeStr}`,
                 {},
                 {
                     headers: {
-                        'authority': 'compass.jinritemai.com',
+                        'authority': PrefixHost,
                         'accept': 'application/json, text/plain, */*',
                         'accept-language': 'zh-CN,zh;q=0.9',
                         'cache-control': 'no-cache',
-                        'cookie': 'SHOP_ID=54820011; PIGEON_CID=7129657361257946662; MONITOR_WEB_ID=6f4ac81e-de8e-415c-aaba-63962644dbcb; passport_csrf_token=3cee623584fc8ac7cb520bb9c0194ede; passport_csrf_token_default=3cee623584fc8ac7cb520bb9c0194ede; qc_tt_tag=0; Hm_lvt_ed0a6497a1fdcdb3cdca291a7692408d=1665664012,1666759844; Hm_lvt_729f63f2a2cf56cd38fff0220c787b4a=1665664012,1666759844; _tea_utm_cache_4031=undefined; _tea_utm_cache_4499=undefined; x-jupiter-uuid=16670421128099918; n_mh=-07pB7K7kGEY65o6-x9WIghQfhf3Iv50JU8_a7g8OMY; Hm_lvt_7afe580efa9cda86356bdea8077a83e7=1665664022,1667139434; sso_uid_tt=a8af0f5ab81d9cbdf939e6001d84bee3; sso_uid_tt_ss=a8af0f5ab81d9cbdf939e6001d84bee3; toutiao_sso_user=9c03e0b733fe3b39c73a7fad46f46dff; toutiao_sso_user_ss=9c03e0b733fe3b39c73a7fad46f46dff; sid_ucp_sso_v1=1.0.0-KGU5OTFmNGYwNGI0ZjcyYTU3MmQwM2FhOTFmMjdiMWZiMzk4YTdjYzQKHwie3JD0y43WBBC6gISbBhiwISAMMO3Sr44GOAZA9AcaAmxmIiA5YzAzZTBiNzMzZmUzYjM5YzczYTdmYWQ0NmY0NmRmZg; ssid_ucp_sso_v1=1.0.0-KGU5OTFmNGYwNGI0ZjcyYTU3MmQwM2FhOTFmMjdiMWZiMzk4YTdjYzQKHwie3JD0y43WBBC6gISbBhiwISAMMO3Sr44GOAZA9AcaAmxmIiA5YzAzZTBiNzMzZmUzYjM5YzczYTdmYWQ0NmY0NmRmZg; odin_tt=b45ba05973608b61b9c25754e6d7283d3f382bb5daf879de9702712838ab2d9667439ad690b2ef32d1416f2b6df301e2d6ac9007c36f926cc4b9e2fe475528a7; passport_auth_status=1b7fbd5e59a2630e7ea65fc102723c25%2C5d6b9184ede470d48c537c37247839ff; passport_auth_status_ss=1b7fbd5e59a2630e7ea65fc102723c25%2C5d6b9184ede470d48c537c37247839ff; ucas_sso_c0=CkEKBTEuMC4wEJ-IiqKChcCwYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC9gISbBki9tMCdBlCmvJ2gh7Po-GJYbxIUTxrmto4S4wgNdCiNKLYViki4hs0; ucas_sso_c0_ss=CkEKBTEuMC4wEJ-IiqKChcCwYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC9gISbBki9tMCdBlCmvJ2gh7Po-GJYbxIUTxrmto4S4wgNdCiNKLYViki4hs0; ucas_c0=CkEKBTEuMC4wEKOIgaqchMCwYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC9gISbBki9tMCdBlCmvJ2gh7Po-GJYbxIUEQ7DvTOQjtZAbmgKhJpaAtCWq_w; ucas_c0_ss=CkEKBTEuMC4wEKOIgaqchMCwYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC9gISbBki9tMCdBlCmvJ2gh7Po-GJYbxIUEQ7DvTOQjtZAbmgKhJpaAtCWq_w; sid_guard=62f5674a916d050f73c7d996605d02f0%7C1667301437%7C5184000%7CSat%2C+31-Dec-2022+11%3A17%3A17+GMT; uid_tt=9487f407039a660e2f037760339d32b6; uid_tt_ss=9487f407039a660e2f037760339d32b6; sid_tt=62f5674a916d050f73c7d996605d02f0; sessionid=62f5674a916d050f73c7d996605d02f0; sessionid_ss=62f5674a916d050f73c7d996605d02f0; sid_ucp_v1=1.0.0-KDMzMGIzMjhhOGU0YjI0M2YzNDg5OGIyNDdjZjBjYjAyZTM1YmU4NmYKFwie3JD0y43WBBC9gISbBhiwITgGQPQHGgJscSIgNjJmNTY3NGE5MTZkMDUwZjczYzdkOTk2NjA1ZDAyZjA; ssid_ucp_v1=1.0.0-KDMzMGIzMjhhOGU0YjI0M2YzNDg5OGIyNDdjZjBjYjAyZTM1YmU4NmYKFwie3JD0y43WBBC9gISbBhiwITgGQPQHGgJscSIgNjJmNTY3NGE5MTZkMDUwZjczYzdkOTk2NjA1ZDAyZjA; PHPSESSID=d6e3a56d2f5c9a1884d20b8da22df3cd; PHPSESSID_SS=d6e3a56d2f5c9a1884d20b8da22df3cd; csrf_session_id=1fd0291e270517eb65a2b31445e8b0b1; ttwid=1%7CJ5NF6vzh2qE17ndeWrsJ1H6RF1Vv1yIe5CILyGE9Yyg%7C1667482570%7C6f5e4b2fc7468bd0fdc441f04be5d9200689774cbeb0acc872a2cd0a9d790461; LUOPAN_DT=session_7161781760320094471; tt_scid=ZsoCEXvn0ccIB4s5awICTXhgHTGoTjHjiiB1eITVpeWAXRWHZSBjPgEl5cDBJeira470; msToken=guEwUcmOoVubGG75FP0rR71B5Up7xzswbuz87Khk1Nli9vnqpe1LPc2oarZiyGgSeHQQlBAGJuIr_W65clW2nk4lhh-ozhbWC_aaZS3tjZcafMblEOnkKBEnMonzP-Q=; msToken=wNDPPUqbXTSfGw9V_ih5G9E6XmxatKSLmgQxg1DJm47ZNQvsDWhelw2v3K_dzw6L_hYWWnjSnhpiPGEwEMUdDAzTqswNMsMjpe7zIq5BWxIM41N3e3CiaI3GCviI1xQ=',
+                        'cookie': 'SHOP_ID=54820011; PIGEON_CID=7129657361257946662; MONITOR_WEB_ID=6f4ac81e-de8e-415c-aaba-63962644dbcb; passport_csrf_token=3cee623584fc8ac7cb520bb9c0194ede; passport_csrf_token_default=3cee623584fc8ac7cb520bb9c0194ede; qc_tt_tag=0; Hm_lvt_ed0a6497a1fdcdb3cdca291a7692408d=1665664012,1666759844; Hm_lvt_729f63f2a2cf56cd38fff0220c787b4a=1665664012,1666759844; _tea_utm_cache_4031=undefined; _tea_utm_cache_4499=undefined; x-jupiter-uuid=16670421128099918; n_mh=-07pB7K7kGEY65o6-x9WIghQfhf3Iv50JU8_a7g8OMY; Hm_lvt_7afe580efa9cda86356bdea8077a83e7=1665664022,1667139434; sso_uid_tt=79a7070c38599c6753bd6878fec9b2f2; sso_uid_tt_ss=79a7070c38599c6753bd6878fec9b2f2; toutiao_sso_user=d21ce9dcad333822e5bb3a0bc5c35726; toutiao_sso_user_ss=d21ce9dcad333822e5bb3a0bc5c35726; sid_ucp_sso_v1=1.0.0-KDcxYWNkZjBiMjA0ZjAxYmU4YTJjY2ViNmQ3MTdkNzUzYTMwYWZlYTQKHwie3JD0y43WBBCxspebBhiwISAMMO3Sr44GOAZA9AcaAmxmIiBkMjFjZTlkY2FkMzMzODIyZTViYjNhMGJjNWMzNTcyNg; ssid_ucp_sso_v1=1.0.0-KDcxYWNkZjBiMjA0ZjAxYmU4YTJjY2ViNmQ3MTdkNzUzYTMwYWZlYTQKHwie3JD0y43WBBCxspebBhiwISAMMO3Sr44GOAZA9AcaAmxmIiBkMjFjZTlkY2FkMzMzODIyZTViYjNhMGJjNWMzNTcyNg; odin_tt=9695b2e4461b98cc3158ca03ad79632024fd0997099b5b6ede679570c442205307e40c1836335e737c558fe67c0185046b65b490676d58a445544c70baf2a9fd; passport_auth_status=b3208f99fb60e3a32b96849155d969ba%2C9219746d8d454d7e28156c2d958194e8; passport_auth_status_ss=b3208f99fb60e3a32b96849155d969ba%2C9219746d8d454d7e28156c2d958194e8; ucas_sso_c0=CkEKBTEuMC4wEKWIiPTspPayYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC3spebBki35tOdBlCmvJ2gh7Po-GJYbxIUwWQ6d8AIY5vGSbtjuNFa0j6qTDk; ucas_sso_c0_ss=CkEKBTEuMC4wEKWIiPTspPayYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC3spebBki35tOdBlCmvJ2gh7Po-GJYbxIUwWQ6d8AIY5vGSbtjuNFa0j6qTDk; ucas_c0=CkEKBTEuMC4wEKSIj9zGpPayYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC3spebBki35tOdBlCmvJ2gh7Po-GJYbxIU712ywARuqF7PBDHWJsW407Eqh_Q; ucas_c0_ss=CkEKBTEuMC4wEKSIj9zGpPayYxjmJiCU0vDayo2FByiwITCe3JD0y43WBEC3spebBki35tOdBlCmvJ2gh7Po-GJYbxIU712ywARuqF7PBDHWJsW407Eqh_Q; sid_guard=bf124405ca8078d7e9338cf4d076b744%7C1667619127%7C5184000%7CWed%2C+04-Jan-2023+03%3A32%3A07+GMT; uid_tt=a2adc9b641680b15609730190474ebab; uid_tt_ss=a2adc9b641680b15609730190474ebab; sid_tt=bf124405ca8078d7e9338cf4d076b744; sessionid=bf124405ca8078d7e9338cf4d076b744; sessionid_ss=bf124405ca8078d7e9338cf4d076b744; sid_ucp_v1=1.0.0-KDFiNTYzODEzYzIxOTVmZWVlOTBhMzNmYTY0OTNiMjE0NTg4YTM1NDgKFwie3JD0y43WBBC3spebBhiwITgGQPQHGgJsZiIgYmYxMjQ0MDVjYTgwNzhkN2U5MzM4Y2Y0ZDA3NmI3NDQ; ssid_ucp_v1=1.0.0-KDFiNTYzODEzYzIxOTVmZWVlOTBhMzNmYTY0OTNiMjE0NTg4YTM1NDgKFwie3JD0y43WBBC3spebBhiwITgGQPQHGgJsZiIgYmYxMjQ0MDVjYTgwNzhkN2U5MzM4Y2Y0ZDA3NmI3NDQ; PHPSESSID=ba508b2b422895bcc4eeb57a97d88e33; PHPSESSID_SS=ba508b2b422895bcc4eeb57a97d88e33; csrf_session_id=e270f905105d9824b2c66f091109664d; ttwid=1%7CJ5NF6vzh2qE17ndeWrsJ1H6RF1Vv1yIe5CILyGE9Yyg%7C1667619857%7C132c2f709572bf8391c867566c549629c8b766034468dbdaebbde6123c7fe28f; LUOPAN_DT=session_7162370172114796841; tt_scid=WWv.hJcW4eYtmBsGIwyIMKqdv0-ObfIs8Ekl0pYN3JRGuhc.nXphx6DgmEzc0xkz709f; msToken=-qunVCaK5G5wtKISUTzsnEuv7EuNAQDOqW4TNQhzWkHYvrS8tGMHqElQaLGq_IVRWT5EkftvVzEIdb2jkF_EfXi34RYFqeZGiSxM-5KNxaT4MEByAjx-vQ==; msToken=Dj5t-Fmg8Eix1M_htwDiuL2f8AUEKwKZ49d9YQZFtvihV6pTFptxEK4t0VbrVwNINIeNWjB6ApSmu2FoaJ4xvwTphb3sxzMcrdKf3gc3a42uDVRfWlXjCQ==',
                         'pragma': 'no-cache',
-                        'referer': 'https://compass.jinritemai.com/shop/merchandise-traffic-analysis?product_id=3568103047295009149&tab_type=21&tab_value=1666800000%2C1667318400&prepages%5B0%5D=%2Fshop%2Fmerchandise-traffic',
+                        'referer': `${PrefixUrl}/shop/merchandise-traffic-analysis?product_id=${params.product_id}&tab_type=21&tab_value=1666972800%2C1667491200&prepages%5B0%5D=%2Fshop%2Fmerchandise-traffic`,
                         'sec-ch-ua': '"Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"',
                         'sec-ch-ua-mobile': '?0',
                         'sec-ch-ua-platform': '"macOS"',
@@ -42,11 +64,36 @@ export default class ActivityProcessController {
                     }
                 }
             );
-            console.log('res = ', res.data);
+            const list = res.data.data?.data_result?.value ?? [];
+            const deadHour = (new Date()).getHours();
+            let deadNumber = 0;
+
+            const newList: NewListItem[] = [];
+            list.forEach((item, index) => {
+                if (index === 0) {
+                    return;
+                }
+                const before = list[index - 1].y;
+                const current = list[index].y;
+                // 当天，截止到上一个小时的数据
+                if (!current.today) {
+                    deadNumber = before.today;
+                }
+                newList.push({
+                    // 当前时间
+                    time: item.x,
+                    // 今天，该小时内的增量
+                    increment: current.today ? current.today - before.today : 0,
+                    // 昨天，该小时内的增量
+                    yesterday: current.yesterday - before.yesterday
+                });
+            });
 
             ctx.body = {
                 result: SUCCESS_CODE,
-                data: res.data
+                data: newList,
+                deadHour, // 截止的小时，在该小时内，不再重复请求
+                deadNumber,
             };
             ctx.status = 200;
         } catch (e) {

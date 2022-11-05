@@ -1,151 +1,191 @@
 <script setup lang="ts">
-import TheWelcome from "./components/TheWelcome.vue";
-import { ref, computed } from "vue";
-import { format } from "date-fns";
+import { ref, computed, onMounted } from 'vue';
+import LineChartCom from './components/LineChart.vue';
+import { getCompareData, getFlowData } from './api/index';
 
 const currentData = ref({
-  productShowUCnt: 0, // 商品曝光人数
-  productClickUcnt: 0, // 商品点击人数
-  payUcnt: 0, // 商品成交人数
-  productClickShowUcntRatio: 0, // 商品点击率(人数)
-  productShowPayUcntRatio: 0, // 商品曝光-成交率(人数)
-  productPayClickUcntRatio: 0, // 商品点击-成交率(人数)
+    productShowUCnt: 0, // 商品曝光人数
+    productClickUcnt: 0, // 商品点击人数
+    payUcnt: 0, // 商品成交人数
+    productClickShowUcntRatio: 0, // 商品点击率(人数)
+    productShowPayUcntRatio: 0, // 商品曝光-成交率(人数)
+    productPayClickUcntRatio: 0, // 商品点击-成交率(人数)
 });
 
 const headerInfo = [
-  {
-    key: "time",
-    title: "时间段",
-  },
-  {
-    key: "productShowUCnt",
-    title: "商品曝光人数",
-  },
-  {
-    key: "productClickUcnt",
-    title: "商品点击人数",
-  },
-  {
-    key: "payUcnt",
-    title: "商品成交人数",
-  },
-  {
-    key: "productClickShowUcntRatio",
-    title: "商品点击率(人数)",
-  },
-  {
-    key: "productShowPayUcntRatio",
-    title: "商品曝光-成交率(人数)",
-  },
-  {
-    key: "productPayClickUcntRatio",
-    title: "商品点击-成交率(人数)",
-  },
+    {
+        key: 'time',
+        title: '时间段',
+    },
+    {
+        key: 'productShowUCnt',
+        title: '商品曝光人数',
+    },
+    {
+        key: 'productClickUcnt',
+        title: '商品点击人数',
+    },
+    {
+        key: 'payUcnt',
+        title: '商品成交人数',
+    },
+    {
+        key: 'productClickShowUcntRatio',
+        title: '商品点击率(人数)',
+    },
+    {
+        key: 'productShowPayUcntRatio',
+        title: '商品曝光-成交率(人数)',
+    },
+    {
+        key: 'productPayClickUcntRatio',
+        title: '商品点击-成交率(人数)',
+    },
 ];
 
 const currentHour = new Date().getHours();
 
-const timeZone: any = [];
-function createTimeZone() {
-  for (let i = currentHour - 1; i >= 1; --i) {
-    timeZone.push({
-      title: `${i - 1 > 9 ? "" : "0"}${i - 1}:00-${i > 9 ? "" : "0"}${i}:00`,
-      productShowUCnt: 0,
-      productClickUcnt: 0,
-      payUcnt: 0,
-      productClickShowUcntRatio: 0,
-      productShowPayUcntRatio: 0,
-      productPayClickUcntRatio: 0,
-      key: i,
+onMounted(async ()=> {
+    const data = await getFlowData({
+        product_id: 3568103047295009149,
     });
-  }
-}
-createTimeZone();
-console.log("timeZone = ", timeZone);
+    const compareData = await getCompareData({
+        product_id: 3568103047295009149,
+        index_selected: 'product_click_ucnt'
+    });
+    console.log('data = ', data);
+});
 </script>
 
 <template>
-  <div class="body">
-    <div class="header">
-      <div class="header-input">
-        <div class="input-item">
-          <label>商品曝光人数</label>
-          <input v-model="currentData.productShowUCnt" />
+    <div class="body">
+        <div class="header">
+            <div class="header-row">
+                <div class="header-item">
+                    <p class="item-title">商品曝光人数</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+                <div class="header-item">
+                    <p class="item-title">商品点击人数</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+                <div class="header-item">
+                    <p class="item-title">商品成交人数</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+                <div class="header-item">
+                    <p class="item-title">商品成交订单数</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+                <div class="header-item">
+                    <p class="item-title">商品成交金额</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+            </div>
+            <div class="header-row">
+                <div class="header-item">
+                    <p class="item-title">商品点击率(人数)</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+                <div class="header-item">
+                    <p class="item-title">商品点击-成交率(人数)</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+                <div class="header-item">
+                    <p class="item-title">商品曝光-成交率(人数)</p>
+                    <p class="item-today"></p>
+                    <p class="item-yesterday">昨日</p>
+                </div>
+            </div>
+            <div class="input-item">
+                <label>商品点击人数</label>
+                <input v-model="currentData.productClickUcnt" />
+            </div>
+            <div class="input-item">
+                <label>商品成交人数</label>
+                <input v-model="currentData.payUcnt" />
+            </div>
+            <div class="analyze-item">
+                商品点击率(人数)&nbsp;&nbsp;&nbsp;{{
+                    currentData.productClickShowUcntRatio
+                }}
+            </div>
+            <div class="analyze-item">
+                商品点击-成交率(人数){{
+                    currentData.productPayClickUcntRatio
+                }}
+            </div>
+            <div class="analyze-item">
+                商品曝光-成交率(人数){{
+                    currentData.productShowPayUcntRatio
+                }}
+            </div>
+            <div class="analyze-item">
+                商品曝光-成交率(人数){{
+                    currentData.productShowPayUcntRatio
+                }}
+            </div>
         </div>
-        <div class="input-item">
-          <label>商品点击人数</label>
-          <input v-model="currentData.productClickUcnt" />
+        <div class="content">
+            <line-chart-com />
+            <line-chart-com />
+            <line-chart-com />
+            <line-chart-com />
+            <line-chart-com />
         </div>
-        <div class="input-item">
-          <label>商品成交人数</label>
-          <input v-model="currentData.payUcnt" />
-        </div>
-      </div>
-      <div class="header-analyze">
-        <div class="analyze-item">
-          商品点击率(人数)&nbsp;&nbsp;&nbsp;{{ currentData.productClickShowUcntRatio }}
-        </div>
-        <div class="analyze-item">
-          商品点击-成交率(人数){{ currentData.productPayClickUcntRatio }}
-        </div>
-        <div class="analyze-item">
-          商品曝光-成交率(人数){{ currentData.productShowPayUcntRatio }}
-        </div>
-      </div>
     </div>
-    <div class="table">
-      <div class="table-header">
-        <div v-for="item in headerInfo" :key="item.key" class="header-item">
-          {{ item.title }}
-        </div>
-      </div>
-      <div class="table-body">
-        <div v-for="item in timeZone" :key="item.key" class="table-row">
-          <div
-            v-for="(row, index) in Object.keys(item).filter(
-              (item) => item !== 'key'
-            )"
-            :key="index"
-            class="row-item"
-          >
-            <span>{{ item[row] }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <style scoped>
-.table-header {
-  display: flex;
-  justify-content: space-between;
+.body {
+    padding: 20px 0;
 }
 
-.header-item,
-.row-item {
-  width: 180px;
-  text-align: center;
+.header-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
 }
 
-.table-row {
-  display: flex;
-  justify-content: space-between;
+.header-item {
+    width: 200px;
+    margin-right: 20px;
+    border: 1px solid #ebecf0;
+    border-radius: 4px;
+    padding: 12px;
+    cursor: pointer;
 }
 
-.row-item {
-  text-align: center;
+.header-item:hover {
+    background: #f5f8ff;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.header-input,
-.header-analyze {
-  display: flex;
+.item-title {
+    color: #5e6066;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
-.input-item,
-.analyze-item {
-  margin-right: 20px;
-  width: 300px;
+.item-today {
+    font-size: 18px;
+    line-height: 46px;
+    color: rgb(18, 19, 20);
+    height: 46px;
+    font-weight: 600;
 }
 
+.item-yesterday {
+    color: #909299;
+    font-size: 12px;
+}
 </style>
