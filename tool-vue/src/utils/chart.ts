@@ -1,6 +1,6 @@
 // 横轴：时间
 export const chartTimeZoneConfig = [
-    // '00:00',
+    '00:00',
     '01:00',
     '02:00',
     '03:00',

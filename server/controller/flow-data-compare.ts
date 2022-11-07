@@ -25,23 +25,36 @@ export default class ActivityProcessController {
             if (!args.index_selected) {
                 throw new Error('缺少参数index_selected');
             }
-            if (!args.product_id) {
-                throw new Error('缺少参数product_id');
-            }
-            const params = Object.assign({}, {
+            // if (!args.product_id) {
+            //     throw new Error('缺少参数product_id');
+            // }
+            console.log('args = ', args);
+            let params: any = Object.assign({}, {
                 date_type: 1,
                 begin_date: '',
                 end_date: '',
                 is_activity: false,
                 activity_id: '',
                 product_id: '3568103047295009149',
-                index_selected: 'product_click_ucnt',
-                _lid: 614025885630,
-                msToken: '2pc2--BJBCvxMpoAS6S8ei-Q6-pcut2XGWBX6K8jkDjEQL093kgv2KpzvErUZwz6OG4Lhfi7KpXc3mpa7eU_vE-ranO3e8E8jE-jBVQhCxOg3He2VODvTG5KSg5-Ft8=',
-                'X-Bogus': 'DFSzsdVLfiUANjwQS0Qc037TlqeL',
-            });
-            const encodeStr = encodeParams(params);
-            console.log('encodeStr =', encodeStr);
+                index_selected: 'product_show_ucnt',
+                _lid: 674131157614,
+                msToken: 'ZdF3KHM_tRA0tTbXeW8ECetDTe61Me-pnS4csRQR9r-ZHb9GkCjlUMPKd7bHIiCBDypehNrvhV4dSCYeVOuQ8_UXt04gDNGb98-6e5AngiJdlGeodo2d3SEp-dgbBdw=',
+                'X-Bogus': 'DFSzsdVuXPJANGAQS0svmN7TlqCL',
+            }, args);
+            let encodeStr = encodeParams(params);
+
+            // 针对三种类型，需要分别处理一下
+            if (params.index_selected === 'product_click_ucnt') {
+                encodeStr = '?date_type=1&begin_date=2022%2F11%2F06+00:00:00&end_date=2022%2F11%2F06+00:00:00&is_activity=false&activity_id=&product_id=3568103047295009149&index_selected=product_click_ucnt&_lid=051443347653&msToken=ICiZhNQqpTKSlhKgP3dbfwTIeURKdA0wHXE5Do3xbFrkTrHTuMDu_080DG7YDUalNuop_HpScBewfTpeCQdVxKDacF1V_3gyvqC_sG6HBPD3fozvcKQ74F-7gBbByto=&X-Bogus=DFSzsdVu/1zANGAQS0MzXr7TlqtW';
+                // params = Object.assign({}, params, {
+                //     _lid: 674131157614,
+                //     msToken: 'gU7fVLnCMvq3rt2sxnONGyTmd12pUn2ZfoRIHf-tsveHZPvgieQubVf_xwY0B7h6kKUvPTmfO1E18EmZvDtHMJk-KPXSn33KQydzxFlXsp60YqjwVT3-EcvL2Z6lnbw=',
+                //     'X-Bogus': 'DFSzsdVuj2GANGAQS0MzB37TlqSa'
+                // });
+            } else if (params.index_selected === 'pay_ucnt') {
+                encodeStr = '?date_type=1&begin_date=2022%2F11%2F06+00:00:00&end_date=2022%2F11%2F06+00:00:00&is_activity=false&activity_id=&product_id=3568103047295009149&index_selected=pay_ucnt&_lid=051544520786&msToken=gU7fVLnCMvq3rt2sxnONGyTmd12pUn2ZfoRIHf-tsveHZPvgieQubVf_xwY0B7h6kKUvPTmfO1E18EmZvDtHMJk-KPXSn33KQydzxFlXsp60YqjwVT3-EcvL2Z6lnbw=&X-Bogus=DFSzsdVuj2GANGAQS0MzB37TlqSa';
+            }
+            // console.log('encodeStr =', encodeStr);
             const res = await get<DataCompareRes>(
                 `${PrefixUrl}/compass_api/shop/product/product_detail/flow_data_compare${encodeStr}`,
                 {},
@@ -65,12 +78,29 @@ export default class ActivityProcessController {
                 }
             );
             const list = res.data.data?.data_result?.value ?? [];
+            if(list.length === 0) {
+                ctx.body = {
+                    result: ERROR_RES_CODE,
+                    ...res.data
+                };
+                ctx.status = 500;
+                return;
+            }
+
             const deadHour = (new Date()).getHours();
             let deadNumber = 0;
 
             const newList: NewListItem[] = [];
             list.forEach((item, index) => {
                 if (index === 0) {
+                    newList.push({
+                        // 当前时间
+                        time: item.x,
+                        // 今天，该小时内的增量
+                        increment: 0,
+                        // 昨天，该小时内的增量
+                        yesterday: 0
+                    });
                     return;
                 }
                 const before = list[index - 1].y;

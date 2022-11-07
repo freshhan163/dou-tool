@@ -36,10 +36,10 @@ export default class FlowDataController {
                 activity_id: '',
                 product_id: '3568103047295009149',
                 index_selected: 'product_show_ucnt,product_click_ucnt,pay_ucnt,product_add_to_cart_ucnt,product_wish_ucnt,product_click_show_ucnt_ratio,product_show_pay_ucnt_ratio,product_pay_click_ucnt_ratio,pay_amt,pay_cnt',
-                _lid: 590274278004,
-                msToken: 'iBjL0pzG5T3xUvul5GfcOzhbDbxLgEnz2e-Gtx1v0aWz2CYdTaZ3toHZdENnoIyfwOG4E_urkQ5N_KX5rswWJDp-XDuoJIixbu_v2hfrYaGMDhgn44hTbnNWSwjxKak=',
-                'X-Bogus': 'DFSzsdVuKYbANGAQS0QJlp7Tlqep',
-            });
+                _lid: 640881393182,
+                msToken: 'TuBQ36GsM4XugWNfV_28McV5rdAMjpFj1ln-ZRH0XZXj8AJLDFLfMOQGLdOWsakdUaCCKwj9H0N-5oCX4WkHOz8v_vTyOEscPjt6Bg26yQfzc4LDect75rgqBtL1Yc8=',
+                'X-Bogus': 'DFSzsdVL0yJANjwQS0s8zr7TlqCC',
+            }, args);
             // _lid, msToken, X-Bogus
             const encodeStr = encodeParams(params);
             // console.log('encodeStr =', encodeStr);
@@ -65,7 +65,33 @@ export default class FlowDataController {
                     }
                 }
             );
-            const list = res.data.data?.index_list ?? [];
+            console.log('res.list = ', res.data);
+            let list = res.data.data?.index_list ?? [];
+
+            // 接口请求失败
+            if(list.length === 0) {
+                ctx.body = {
+                    result: ERROR_RES_CODE,
+                    ...res.data
+                };
+                ctx.status = 500;
+                return;
+            }
+
+            list = list.filter(item => {
+                const temp = item.data_head.index;
+                if (['product_add_to_cart_ucnt', 'product_wish_ucnt'].includes(temp.index_name)) {
+                    return false;
+                }
+                // 处理百分比
+                if (temp.change_value.value < 1 || temp.value?.value < 1){
+                    // @ts-ignore
+                    temp.value.value = `${(temp.value.value * 100).toFixed(2)}%`;
+                    // @ts-ignore
+                    temp.change_value.value = `${(temp.change_value.value * 100).toFixed(2)}%`;
+                }
+                return true;
+            });
 
             ctx.body = {
                 result: SUCCESS_CODE,
