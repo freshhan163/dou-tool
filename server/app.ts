@@ -3,9 +3,10 @@ import koaCors from '@koa/cors';
 import koaBody from 'koa-body';
 import koaStatic from 'koa-static';
 import historyApiFallback from 'koa2-connect-history-api-fallback';
-import router from './routers/index';
 import { PORT, staticPath } from './config';
 import healthCheckMiddleware from './middleware/healthCheck';
+import customRouter from './routers/custom';
+import Router from '@koa/router';
 
 const app = new Koa();
 
@@ -19,13 +20,15 @@ app.use(koaCors({
 }));
 
 app.use(koaBody());
-
-// 容器云监控状态检测
 app.use(healthCheckMiddleware);
 
-app.use(historyApiFallback({ index: '/index.html', whiteList: ['/api'] })).use(koaStatic(staticPath));
-
+// 装载所有子路由
+const router = new Router();
+app.use(customRouter.routes()).use(router.allowedMethods());
 app.use(router.routes()).use(router.allowedMethods());
+
+// 防止 /api的请求也指向到index.html
+app.use(historyApiFallback({ index: '/index.html', whiteList: ['/api'] })).use(koaStatic(staticPath));
 
 // 捕获未处理错误
 app.on('error', (err, ctx) => {

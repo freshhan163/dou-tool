@@ -102,9 +102,9 @@ async function getAllCompareData() {
     try {
         const productId = '3568103047295009149';
         const [showUcntRes, clickUCntRes, payUcntRes] = await Promise.all([
-            getCompareData({ index_selected: 'product_show_ucnt' }),
-            getCompareData({ index_selected: 'product_click_ucnt' }),
-            getCompareData({ index_selected: 'pay_ucnt' }),
+            getCompareData({ index_selected: 'product_show_ucnt', productId }),
+            getCompareData({ index_selected: 'product_click_ucnt', productId }),
+            getCompareData({ index_selected: 'pay_ucnt', productId }),
         ]);
 
         // @ts-ignore
@@ -128,7 +128,7 @@ async function getAllCompareData() {
     }
 }
 
-async function getFlowInfo() {
+async function handleGetFlowData() {
     try {
         // @ts-ignore
         const flowRes: any = (await getFlowData({
@@ -145,7 +145,7 @@ async function refreshData() {
     const time = new Date();
     realTime.value = format(time, 'yyyy-MM-dd HH:mm:ss');
 
-    await getFlowInfo();
+    await handleGetFlowData();
 
     const last = time.getHours() - 1;
     // 只更新实时数据
@@ -170,13 +170,13 @@ function handleChartInfo(compareInfo: any) {
 
 onMounted(async () => {
     loading.value = true;
-    await getFlowInfo();
+    await handleGetFlowData();
     const listObj: string = localStorage.getItem(DEAD_HOUR_COMPARE_DATA_STORAGE_KEY) || '';
     // 一个小时内请求一次compareData即可
     if (listObj) {
         return;
     }
-    await getAllCompareData();
+    // await getAllCompareData();
 });
 </script>
 

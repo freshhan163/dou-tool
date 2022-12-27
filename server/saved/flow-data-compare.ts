@@ -25,18 +25,15 @@ export default class ActivityProcessController {
             if (!args.index_selected) {
                 throw new Error('缺少参数index_selected');
             }
-            // if (!args.product_id) {
-            //     throw new Error('缺少参数product_id');
-            // }
+            if (!args.product_id) {
+                throw new Error('缺少参数product_id');
+            }
             console.log('args = ', args);
             let params: any = Object.assign({}, {
                 date_type: 1,
                 begin_date: '',
                 end_date: '',
                 is_activity: false,
-                activity_id: '',
-                product_id: '3568103047295009149',
-                index_selected: 'product_show_ucnt',
                 _lid: 674131157614,
                 msToken: 'ZdF3KHM_tRA0tTbXeW8ECetDTe61Me-pnS4csRQR9r-ZHb9GkCjlUMPKd7bHIiCBDypehNrvhV4dSCYeVOuQ8_UXt04gDNGb98-6e5AngiJdlGeodo2d3SEp-dgbBdw=',
                 'X-Bogus': 'DFSzsdVuXPJANGAQS0svmN7TlqCL',
@@ -54,7 +51,7 @@ export default class ActivityProcessController {
             } else if (params.index_selected === 'pay_ucnt') {
                 encodeStr = '?date_type=1&begin_date=2022%2F11%2F06+00:00:00&end_date=2022%2F11%2F06+00:00:00&is_activity=false&activity_id=&product_id=3568103047295009149&index_selected=pay_ucnt&_lid=051544520786&msToken=gU7fVLnCMvq3rt2sxnONGyTmd12pUn2ZfoRIHf-tsveHZPvgieQubVf_xwY0B7h6kKUvPTmfO1E18EmZvDtHMJk-KPXSn33KQydzxFlXsp60YqjwVT3-EcvL2Z6lnbw=&X-Bogus=DFSzsdVuj2GANGAQS0MzB37TlqSa';
             }
-            // console.log('encodeStr =', encodeStr);
+            console.log('encodeStr =', encodeStr);
             const res = await get<DataCompareRes>(
                 `${PrefixUrl}/compass_api/shop/product/product_detail/flow_data_compare${encodeStr}`,
                 {},

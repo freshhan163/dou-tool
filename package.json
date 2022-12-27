@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "爬取实时数据",
     "scripts": {
-        "server:local": "NODE_ENV=development NODE_BUILD=staging nodemon --config nodemon.json",
+        "dev": "NODE_ENV=development NODE_BUILD=staging nodemon --config nodemon.json",
         "server": "NODE_ENV=production nodemon --config nodemon.json"
     },
     "author": "hanxiaofang",

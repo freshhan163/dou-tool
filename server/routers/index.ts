@@ -3,7 +3,7 @@ import fs, { Stats } from 'fs';
 import { join } from 'path';
 import { Context, Next } from "koa";
 
-const controllerPath = join(__dirname, '../controller');
+const controllerPath = join(__dirname, '../saved');
 
 type ReqMethod = 'get' | 'post';
 
@@ -66,7 +66,6 @@ function controller(router: Router) {
                 if (['get', 'post'].indexOf(type) === -1)  {
                     throw Error(`ERROR: router must get or post, now  ${type}`);
                 }
-
                 // @ts-ignore
                 router[type](item.path, controlHandle(controllerObj, item.__requestName__, type));
             });
