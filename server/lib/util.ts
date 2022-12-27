@@ -12,9 +12,22 @@ export function getErrorInfo(e: any, resultCode: number, context: Context) {
     };
 }
 
+// 验证单个字段
 export function validateField(value: any, valueField: string) {
     if (value === undefined || value === null) {
         throw new Error(`${valueField}字段不存在`);
+    }
+}
+
+// 验证对象：多个字段
+export function validateFields(paramsObj: {
+    [propName: string]: any;
+}) {
+    for (const key in paramsObj) {
+        const value = paramsObj[key];
+        if (!value) {
+            throw new Error(`${key}字段不存在`);
+        }
     }
 }
 
